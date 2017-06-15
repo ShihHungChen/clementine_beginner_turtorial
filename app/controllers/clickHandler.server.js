@@ -33,6 +33,24 @@ function clickHandler(db){
             }
         });
     };
+    
+    this.addClicks = function(req, res){
+        clicks.findAndModify({},{'_id' : 1},{$inc:{'clicks' : 1 } },function(err, result){
+                if(err)
+                    throw err;
+                    
+                    res.json(result);
+            });
+    };
+    
+    this.resetClicks = function(req, res){
+      clicks.update({},{'clicks' : 1},function(err, result){
+              if(err)
+                throw err;
+                
+                res.json(result);
+          });
+    };
 }
 
 module.exports = clickHandler;
