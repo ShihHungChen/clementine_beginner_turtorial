@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 (function(){
     var addButton = document.querySelector('.btn-add');
@@ -37,9 +37,13 @@
     function updateClickCount (data){
       var clicksObject = JSON.parse(data);
       clickNbr.innerHTML = clicksObject.clicks;
+      
+      console.log('update');
     };
     
     ready(ajaxRequest('GET', apiUrl, updateClickCount));
+    
+    console.log('here');
     
     addButton.addEventListener('click', function(){
         ajaxRequest('POST', apiUrl, function(){
