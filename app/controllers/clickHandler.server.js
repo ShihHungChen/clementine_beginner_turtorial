@@ -44,7 +44,7 @@ function clickHandler(db){
     };
     
     this.resetClicks = function(req, res){
-      clicks.update({},{'clicks' : 1},function(err, result){
+      clicks.update({},{'clicks' : 0},function(err, result){
               if(err)
                 throw err;
                 
