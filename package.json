@@ -8,6 +8,7 @@
     "async": "^0.2.10",
     "express": "^4.15.3",
     "mongodb": "^2.2.29",
+    "passport": "^0.3.2",
     "socket.io": "^0.9.19"
   },
   "scripts": {
