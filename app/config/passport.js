@@ -1,11 +1,14 @@
 'use strict'
 
-var GithubStrategy = require('passport-github').Strategy;
+var GitHubStrategy = require('passport-github').Strategy;
 var User = require('../models/users');
 var configAuth = require('./auth');
 
+console.log(configAuth);
+
+
 exports = module.exports = function(passport){
-	passport.serializeUser(fnuction(user, done){ // done is a native function native to Passport module
+	passport.serializeUser(function(user, done){ // done is a native function native to Passport module
 		done(null, user.id);
 	});
 
@@ -15,7 +18,7 @@ exports = module.exports = function(passport){
 		});
 	});
 
-	passport.use(new GithubStrategy({
+	passport.use(new GitHubStrategy({
 		clientID: configAuth.githubAuth.clientID,
 		clientSecret: configAuth.githubAuth.clientSecret,
 		callbackURL: configAuth.githubAuth.callbackURL

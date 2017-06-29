@@ -1,9 +1,9 @@
 'use strict'
 
 var mongoose = require('mongoose');
-var Schena = mongoose.Schena;
+var Schema = mongoose.Schema;
 
-var User = new Schena({
+var User = new Schema({
 	github : {
 		id : String,
 		displayName: String,
@@ -15,4 +15,4 @@ nbrClicks:{
 	}
 });
 
-exports = module.exports = mongoose('User', User);
+exports = module.exports = mongoose.model('User', User);
