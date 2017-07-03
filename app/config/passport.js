@@ -4,9 +4,6 @@ var GitHubStrategy = require('passport-github').Strategy;
 var User = require('../models/users');
 var configAuth = require('./auth');
 
-console.log(configAuth);
-
-
 exports = module.exports = function(passport){
 	passport.serializeUser(function(user, done){ // done is a native function native to Passport module
 		done(null, user.id);
